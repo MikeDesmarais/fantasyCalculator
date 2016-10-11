@@ -1,0 +1,994 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">		
+    <context:component-scan base-package="com.mikedesmarais.fantasycalculator" />
+
+    <bean id="calculator" class="com.mikedesmarais.fantasycalculator.Calculator">
+        <property name="startingTeams">
+            <list>
+                <ref bean="den" />
+                <ref bean="ne" />
+                <ref bean="pit" />
+                <ref bean="hou" />
+                <ref bean="cin" />
+                <ref bean="kc" />
+                <ref bean="sea" />
+                <ref bean="gb" />
+                <ref bean="was" />
+                <ref bean="car" />
+                <ref bean="min" />
+                <ref bean="ari" />
+            </list>
+        </property>
+    </bean>
+    
+    <bean id="den" class="com.mikedesmarais.fantasycalculator.Team">
+        <property name="name" value="Denver" />
+        <property name="players">
+            <list>
+                <ref bean="denQB" />
+                <ref bean="denRB" />
+                <ref bean="denWR" />
+                <ref bean="denTE" />
+                <ref bean="denK" />
+                <ref bean="denDEF" />
+            </list>
+        </property>
+    </bean>
+    
+    <bean id="denQB" class="com.mikedesmarais.fantasycalculator.Player">
+        <property name="name" value="Peyton Manning" />
+        <property name="position" value="QB" />
+        <property name="week1" value="0" />
+        <property name="week2" value="10.78" />
+        <property name="week3" value="14.14" />
+        <property name="week4" value="0" />
+        <property name="totalScore" value="24.92" />
+    </bean>
+    
+    <bean id="denRB" class="com.mikedesmarais.fantasycalculator.Player">
+        <property name="name" value="C.J. Anderson" />
+        <property name="position" value="RB" />
+        <property name="week1" value="0" />
+        <property name="week2" value="14.3" />
+        <property name="week3" value="9" />
+        <property name="week4" value="0" />
+        <property name="totalScore" value="23.3" />
+    </bean>
+    
+    <bean id="denWR" class="com.mikedesmarais.fantasycalculator.Player">
+        <property name="name" value="Emmanuel Sanders" />
+        <property name="position" value="WR" />
+        <property name="week1" value="0" />
+        <property name="week2" value="8.5" />
+        <property name="week3" value="6.2" />
+        <property name="week4" value="0" />
+        <property name="totalScore" value="14.7" />
+    </bean>
+    
+    <bean id="denTE" class="com.mikedesmarais.fantasycalculator.Player">
+        <property name="name" value="Owen Daniels" />
+        <property name="position" value="TE" />
+        <property name="week1" value="0" />
+        <property name="week2" value="1" />
+        <property name="week3" value="15.3" />
+        <property name="week4" value="0" />
+        <property name="totalScore" value="16.3" />
+    </bean>
+    
+    <bean id="denK" class="com.mikedesmarais.fantasycalculator.Player">
+        <property name="name" value="Brandon McManus" />
+        <property name="position" value="K" />
+        <property name="week1" value="0" />
+        <property name="week2" value="20" />
+        <property name="week3" value="10" />
+        <property name="week4" value="0" />
+        <property name="totalScore" value="30" />
+    </bean>
+    
+    <bean id="denDEF" class="com.mikedesmarais.fantasycalculator.Player">
+        <property name="name" value="DEN" />
+        <property name="position" value="DEF" />
+        <property name="week1" value="0" />
+        <property name="week2" value="6" />
+        <property name="week3" value="8" />
+        <property name="week4" value="0" />
+        <property name="totalScore" value="14" />
+    </bean>
+
+    <bean id="ne" class="com.mikedesmarais.fantasycalculator.Team">
+        <property name="name" value="New England" />
+        <property name="players">
+            <list>
+                <ref bean="neQB" />
+                <ref bean="neRB" />
+                <ref bean="neWR" />
+                <ref bean="neTE" />
+                <ref bean="neK" />
+                <ref bean="neDEF" />
+            </list>
+        </property>
+    </bean>
+    
+    <bean id="neQB" class="com.mikedesmarais.fantasycalculator.Player">
+        <property name="name" value="Tom Brady" />
+        <property name="position" value="QB" />
+        <property name="week1" value="0" />
+        <property name="week2" value="26.68" />
+        <property name="week3" value="13.7" />
+        <property name="week4" value="0" />
+        <property name="totalScore" value="40.38" />
+    </bean>
+    
+    <bean id="neRB" class="com.mikedesmarais.fantasycalculator.Player">
+        <property name="name" value="Steven Jackson" />
+        <property name="position" value="RB" />
+        <property name="week1" value="0" />
+        <property name="week2" value="1.6" />
+        <property name="week3" value="6.8" />
+        <property name="week4" value="0" />
+        <property name="totalScore" value="8.4" />
+    </bean>
+    
+    <bean id="neWR" class="com.mikedesmarais.fantasycalculator.Player">
+        <property name="name" value="Julian Edelman" />
+        <property name="position" value="WR" />
+        <property name="week1" value="0" />
+        <property name="week2" value="10" />
+        <property name="week3" value="5.3" />
+        <property name="week4" value="0" />
+        <property name="totalScore" value="15.3" />
+    </bean>
+    
+    <bean id="neTE" class="com.mikedesmarais.fantasycalculator.Player">
+        <property name="name" value="Rob Gronkowski" />
+        <property name="position" value="TE" />
+        <property name="week1" value="0" />
+        <property name="week2" value="20.3" />
+        <property name="week3" value="20.4" />
+        <property name="week4" value="0" />
+        <property name="totalScore" value="40.7" />
+    </bean>
+    
+    <bean id="neK" class="com.mikedesmarais.fantasycalculator.Player">
+        <property name="name" value="Steven Gostkowski" />
+        <property name="position" value="K" />
+        <property name="week1" value="0" />
+        <property name="week2" value="10" />
+        <property name="week3" value="7" />
+        <property name="week4" value="0" />
+        <property name="totalScore" value="17" />
+    </bean>
+    
+    <bean id="neDEF" class="com.mikedesmarais.fantasycalculator.Player">
+        <property name="name" value="NE" />
+        <property name="position" value="DEF" />
+        <property name="week1" value="0" />
+        <property name="week2" value="3" />
+        <property name="week3" value="5" />
+        <property name="week4" value="0" />
+        <property name="totalScore" value="8" />
+    </bean>
+    
+    <bean id="pit" class="com.mikedesmarais.fantasycalculator.Team">
+        <property name="name" value="Pittsburgh" />
+        <property name="players">
+            <list>
+                <ref bean="pitQB" />
+                <ref bean="pitRB" />
+                <ref bean="pitWR" />
+                <ref bean="pitTE" />
+                <ref bean="pitK" />
+                <ref bean="pitDEF" />
+            </list>
+        </property>
+    </bean>
+    
+    <bean id="pitQB" class="com.mikedesmarais.fantasycalculator.Player">
+        <property name="name" value="Ben Roethlesberger" />
+        <property name="position" value="QB" />
+        <property name="week1" value="13.16" />
+        <property name="week2" value="13.56" />
+        <property name="week3" value="0" />
+        <property name="week4" value="0" />
+        <property name="totalScore" value="26.72" />
+    </bean>
+    
+        <bean id="pitRB" class="com.mikedesmarais.fantasycalculator.Player">
+        <property name="name" value="Fitzgerald Tussaint" />
+        <property name="position" value="RB" />
+        <property name="week1" value="6" />
+        <property name="week2" value="8.1" />
+        <property name="week3" value="0" />
+        <property name="week4" value="0" />
+        <property name="totalScore" value="14.1" />
+    </bean>
+    
+<!--     <bean id="pitRB" class="com.mikedesmarais.fantasycalculator.Player"> -->
+<!--         <property name="name" value="Jordan Todman" /> -->
+<!--         <property name="position" value="RB" /> -->
+<!--         <property name="week1" value="6.5" /> -->
+<!--         <property name="week2" value="0" /> -->
+<!--         <property name="week3" value="0" /> -->
+<!--         <property name="week4" value="0" /> -->
+<!--         <property name="totalScore" value="6.5" /> -->
+<!--     </bean> -->
+    
+<!--     <bean id="pitWR" class="com.mikedesmarais.fantasycalculator.Player"> -->
+<!--         <property name="name" value="Antonio Brown" /> -->
+<!--         <property name="position" value="WR" /> -->
+<!--         <property name="week1" value="11.9" /> -->
+<!--         <property name="week2" value="0" /> -->
+<!--         <property name="week3" value="0" /> -->
+<!--         <property name="week4" value="0" /> -->
+<!--         <property name="totalScore" value="11.9" /> -->
+<!--     </bean> -->
+
+    <bean id="pitWR" class="com.mikedesmarais.fantasycalculator.Player">
+        <property name="name" value="Martavis Bryant" />
+        <property name="position" value="WR" />
+        <property name="week1" value="13.3" />
+        <property name="week2" value="19.4" />
+        <property name="week3" value="0" />
+        <property name="week4" value="0" />
+        <property name="totalScore" value="32.7" />
+    </bean>
+    
+<!--     <bean id="pitTE" class="com.mikedesmarais.fantasycalculator.Player"> -->
+<!--         <property name="name" value="Heath Miller" /> -->
+<!--         <property name="position" value="TE" /> -->
+<!--         <property name="week1" value=".9" /> -->
+<!--         <property name="week2" value="0" /> -->
+<!--         <property name="week3" value="0" /> -->
+<!--         <property name="week4" value="0" /> -->
+<!--         <property name="totalScore" value=".9" /> -->
+<!--     </bean> -->
+    <bean id="pitTE" class="com.mikedesmarais.fantasycalculator.Player">
+        <property name="name" value="Jesse James" />
+        <property name="position" value="TE" />
+        <property name="week1" value="0" />
+        <property name="week2" value="2.2" />
+        <property name="week3" value="0" />
+        <property name="week4" value="0" />
+        <property name="totalScore" value="2.2" />
+    </bean>
+    
+    <bean id="pitK" class="com.mikedesmarais.fantasycalculator.Player">
+        <property name="name" value="Chris Boswell" />
+        <property name="position" value="K" />
+        <property name="week1" value="12" />
+        <property name="week2" value="12" />
+        <property name="week3" value="0" />
+        <property name="week4" value="0" />
+        <property name="totalScore" value="24" />
+    </bean>
+    
+    <bean id="pitDEF" class="com.mikedesmarais.fantasycalculator.Player">
+        <property name="name" value="PIT" />
+        <property name="position" value="DEF" />
+        <property name="week1" value="12" />
+        <property name="week2" value="0" />
+        <property name="week3" value="0" />
+        <property name="week4" value="0" />
+        <property name="totalScore" value="12" />
+    </bean>
+    
+    <bean id="hou" class="com.mikedesmarais.fantasycalculator.Team">
+        <property name="name" value="Houston" />
+        <property name="players">
+            <list>
+                <ref bean="houQB" />
+                <ref bean="houRB" />
+                <ref bean="houWR" />
+                <ref bean="houTE" />
+                <ref bean="houK" />
+                <ref bean="houDEF" />
+            </list>
+        </property>
+    </bean>
+    
+    <bean id="houQB" class="com.mikedesmarais.fantasycalculator.Player">
+        <property name="name" value="Brian Hoyer" />
+        <property name="position" value="QB" />
+        <property name="week1" value="-4.56" />
+        <property name="week2" value="0" />
+        <property name="week3" value="0" />
+        <property name="week4" value="0" />
+        <property name="totalScore" value="-4.56" />
+    </bean>
+    
+    <bean id="houRB" class="com.mikedesmarais.fantasycalculator.Player">
+        <property name="name" value="Alfred Blue" />
+        <property name="position" value="RB" />
+        <property name="week1" value="9.9" />
+        <property name="week2" value="0" />
+        <property name="week3" value="0" />
+        <property name="week4" value="0" />
+        <property name="totalScore" value="9.9" />
+    </bean>
+    
+    <bean id="houWR" class="com.mikedesmarais.fantasycalculator.Player">
+        <property name="name" value="DeAndre Hopkins" />
+        <property name="position" value="WR" />
+        <property name="week1" value="6.9" />
+        <property name="week2" value="0" />
+        <property name="week3" value="0" />
+        <property name="week4" value="0" />
+        <property name="totalScore" value="6.9" />
+    </bean>
+    
+    <bean id="houTE" class="com.mikedesmarais.fantasycalculator.Player">
+        <property name="name" value="Ryan Griffin" />
+        <property name="position" value="TE" />
+        <property name="week1" value="2.9" />
+        <property name="week2" value="0" />
+        <property name="week3" value="0" />
+        <property name="week4" value="0" />
+        <property name="totalScore" value="2.9" />
+    </bean>
+    
+    <bean id="houK" class="com.mikedesmarais.fantasycalculator.Player">
+        <property name="name" value="Nick Novak" />
+        <property name="position" value="K" />
+        <property name="week1" value="0" />
+        <property name="week2" value="0" />
+        <property name="week3" value="0" />
+        <property name="week4" value="0" />
+        <property name="totalScore" value="0" />
+    </bean>
+    
+    <bean id="houDEF" class="com.mikedesmarais.fantasycalculator.Player">
+        <property name="name" value="HOU" />
+        <property name="position" value="DEF" />
+        <property name="week1" value="1" />
+        <property name="week2" value="0" />
+        <property name="week3" value="0" />
+        <property name="week4" value="0" />
+        <property name="totalScore" value="1" />
+    </bean>
+    
+    <bean id="cin" class="com.mikedesmarais.fantasycalculator.Team">
+        <property name="name" value="Cincinatti" />
+        <property name="players">
+            <list>
+                <ref bean="cinQB" />
+                <ref bean="cinRB" />
+                <ref bean="cinWR" />
+                <ref bean="cinTE" />
+                <ref bean="cinK" />
+                <ref bean="cinDEF" />
+            </list>
+        </property>
+    </bean>
+    
+    <bean id="cinQB" class="com.mikedesmarais.fantasycalculator.Player">
+        <property name="name" value="AJ McCarron" />
+        <property name="position" value="QB" />
+        <property name="week1" value="8.48" />
+        <property name="week2" value="0" />
+        <property name="week3" value="0" />
+        <property name="week4" value="0" />
+        <property name="totalScore" value="8.48" />
+    </bean>
+    
+    <bean id="cinRB" class="com.mikedesmarais.fantasycalculator.Player">
+        <property name="name" value="Jeremy Hill" />
+        <property name="position" value="RB" />
+        <property name="week1" value="11.7" />
+        <property name="week2" value="0" />
+        <property name="week3" value="0" />
+        <property name="week4" value="0" />
+        <property name="totalScore" value="11.7" />
+    </bean>
+    
+    <bean id="cinWR" class="com.mikedesmarais.fantasycalculator.Player">
+        <property name="name" value="AJ Green" />
+        <property name="position" value="WR" />
+        <property name="week1" value="13.1" />
+        <property name="week2" value="0" />
+        <property name="week3" value="0" />
+        <property name="week4" value="0" />
+        <property name="totalScore" value="13.1" />
+    </bean>
+    
+    <bean id="cinTE" class="com.mikedesmarais.fantasycalculator.Player">
+        <property name="name" value="Tyler Eifert" />
+        <property name="position" value="TE" />
+        <property name="week1" value="5.8" />
+        <property name="week2" value="0" />
+        <property name="week3" value="0" />
+        <property name="week4" value="0" />
+        <property name="totalScore" value="5.8" />
+    </bean>
+    
+    <bean id="cinK" class="com.mikedesmarais.fantasycalculator.Player">
+        <property name="name" value="Mike Nugent" />
+        <property name="position" value="K" />
+        <property name="week1" value="4" />
+        <property name="week2" value="0" />
+        <property name="week3" value="0" />
+        <property name="week4" value="0" />
+        <property name="totalScore" value="4" />
+    </bean>
+    
+    <bean id="cinDEF" class="com.mikedesmarais.fantasycalculator.Player">
+        <property name="name" value="CIN" />
+        <property name="position" value="DEF" />
+        <property name="week1" value="10" />
+        <property name="week2" value="0" />
+        <property name="week3" value="0" />
+        <property name="week4" value="0" />
+        <property name="totalScore" value="10" />
+    </bean>
+    
+    <bean id="kc" class="com.mikedesmarais.fantasycalculator.Team">
+        <property name="name" value="Kansas City" />
+        <property name="players">
+            <list>
+                <ref bean="kcQB" />
+                <ref bean="kcRB" />
+                <ref bean="kcWR" />
+                <ref bean="kcTE" />
+                <ref bean="kcK" />
+                <ref bean="kcDEF" />
+            </list>
+        </property>
+    </bean>
+    
+    <bean id="kcQB" class="com.mikedesmarais.fantasycalculator.Player">
+        <property name="name" value="Alex Smith" />
+        <property name="position" value="QB" />
+        <property name="week1" value="9.6" />
+        <property name="week2" value="18.24" />
+        <property name="week3" value="0" />
+        <property name="week4" value="0" />
+        <property name="totalScore" value="27.84" />
+    </bean>
+    
+<!--     <bean id="kcRB" class="com.mikedesmarais.fantasycalculator.Player"> -->
+<!--         <property name="name" value="Spencer Ware" /> -->
+<!--         <property name="position" value="RB" /> -->
+<!--         <property name="week1" value="12.7" /> -->
+<!--         <property name="week2" value="0" /> -->
+<!--         <property name="week3" value="0" /> -->
+<!--         <property name="week4" value="0" /> -->
+<!--         <property name="totalScore" value="12.7" /> -->
+<!--     </bean> -->
+    
+        <bean id="kcRB" class="com.mikedesmarais.fantasycalculator.Player">
+        <property name="name" value="Charcandrick West" />
+        <property name="position" value="RB" />
+        <property name="week1" value="3.5" />
+        <property name="week2" value="13.6" />
+        <property name="week3" value="0" />
+        <property name="week4" value="0" />
+        <property name="totalScore" value="17.1" />
+    </bean>
+    
+<!--     <bean id="kcWR" class="com.mikedesmarais.fantasycalculator.Player"> -->
+<!--         <property name="name" value="Chris Conley" /> -->
+<!--         <property name="position" value="WR" /> -->
+<!--         <property name="week1" value="6.9" /> -->
+<!--         <property name="week2" value="0" /> -->
+<!--         <property name="week3" value="0" /> -->
+<!--         <property name="week4" value="0" /> -->
+<!--         <property name="totalScore" value="6.9" /> -->
+<!--     </bean> -->
+    
+        <bean id="kcWR" class="com.mikedesmarais.fantasycalculator.Player">
+        <property name="name" value="Albert Wilson" />
+        <property name="position" value="WR" />
+        <property name="week1" value=".9" />
+        <property name="week2" value="11.7" />
+        <property name="week3" value="0" />
+        <property name="week4" value="0" />
+        <property name="totalScore" value="12.6" />
+    </bean>
+    
+    <bean id="kcTE" class="com.mikedesmarais.fantasycalculator.Player">
+        <property name="name" value="Travis Kelce" />
+        <property name="position" value="TE" />
+        <property name="week1" value="12.8" />
+        <property name="week2" value="2.3" />
+        <property name="week3" value="0" />
+        <property name="week4" value="0" />
+        <property name="totalScore" value="15.1" />
+    </bean>
+    
+    <bean id="kcK" class="com.mikedesmarais.fantasycalculator.Player">
+        <property name="name" value="Cairo Santos" />
+        <property name="position" value="K" />
+        <property name="week1" value="14" />
+        <property name="week2" value="8" />
+        <property name="week3" value="0" />
+        <property name="week4" value="0" />
+        <property name="totalScore" value="22" />
+    </bean>
+    
+    <bean id="kcDEF" class="com.mikedesmarais.fantasycalculator.Player">
+        <property name="name" value="KC" />
+        <property name="position" value="DEF" />
+        <property name="week1" value="29" />
+        <property name="week2" value="-1" />
+        <property name="week3" value="0" />
+        <property name="week4" value="0" />
+        <property name="totalScore" value="28" />
+    </bean>
+    
+    <bean id="sea" class="com.mikedesmarais.fantasycalculator.Team">
+        <property name="name" value="Seattle" />
+        <property name="players">
+            <list>
+                <ref bean="seaQB" />
+                <ref bean="seaRB" />
+                <ref bean="seaWR" />
+                <ref bean="seaTE" />
+                <ref bean="seaK" />
+                <ref bean="seaDEF" />
+            </list>
+        </property>
+    </bean>
+    
+    <bean id="seaQB" class="com.mikedesmarais.fantasycalculator.Player">
+        <property name="name" value="Russell Wilson" />
+        <property name="position" value="QB" />
+        <property name="week1" value="9.78" />
+        <property name="week2" value="25.84" />
+        <property name="week3" value="0" />
+        <property name="week4" value="0" />
+        <property name="totalScore" value="35.62" />
+    </bean>
+    
+    <bean id="seaRB" class="com.mikedesmarais.fantasycalculator.Player">
+        <property name="name" value="Christine Michael" />
+        <property name="position" value="RB" />
+        <property name="week1" value="8.4" />
+        <property name="week2" value="0" />
+        <property name="week3" value="0" />
+        <property name="week4" value="0" />
+        <property name="totalScore" value="8.4" />
+    </bean>
+    
+<!--     <bean id="seaWR" class="com.mikedesmarais.fantasycalculator.Player"> -->
+<!--         <property name="name" value="Doug Baldwin" /> -->
+<!--         <property name="position" value="WR" /> -->
+<!--         <property name="week1" value="10.2" /> -->
+<!--         <property name="week2" value="8.2" /> -->
+<!--         <property name="week3" value="0" /> -->
+<!--         <property name="week4" value="0" /> -->
+<!--         <property name="totalScore" value="18.4" /> -->
+<!--     </bean> -->
+
+    <bean id="seaWR" class="com.mikedesmarais.fantasycalculator.Player">
+        <property name="name" value="Jermaine Kearse" />
+        <property name="position" value="WR" />
+        <property name="week1" value="1.8" />
+        <property name="week2" value="23" />
+        <property name="week3" value="0" />
+        <property name="week4" value="0" />
+        <property name="totalScore" value="24.8" />
+    </bean>
+    
+    <bean id="seaTE" class="com.mikedesmarais.fantasycalculator.Player">
+        <property name="name" value="Luke Wilson" />
+        <property name="position" value="TE" />
+        <property name="week1" value="0" />
+        <property name="week2" value="5.4" />
+        <property name="week3" value="0" />
+        <property name="week4" value="0" />
+        <property name="totalScore" value="5.4" />
+    </bean>
+    
+    <bean id="seaK" class="com.mikedesmarais.fantasycalculator.Player">
+        <property name="name" value="Steven Hauschka" />
+        <property name="position" value="K" />
+        <property name="week1" value="5" />
+        <property name="week2" value="6" />
+        <property name="week3" value="0" />
+        <property name="week4" value="0" />
+        <property name="totalScore" value="11" />
+    </bean>
+    
+    <bean id="seaDEF" class="com.mikedesmarais.fantasycalculator.Player">
+        <property name="name" value="SEA" />
+        <property name="position" value="DEF" />
+        <property name="week1" value="9" />
+        <property name="week2" value="-3" />
+        <property name="week3" value="0" />
+        <property name="week4" value="0" />
+        <property name="totalScore" value="6" />
+    </bean>
+    
+    <bean id="gb" class="com.mikedesmarais.fantasycalculator.Team">
+        <property name="name" value="Green Bay" />
+        <property name="players">
+            <list>
+                <ref bean="gbQB" />
+                <ref bean="gbRB" />
+                <ref bean="gbWR" />
+                <ref bean="gbTE" />
+                <ref bean="gbK" />
+                <ref bean="gbDEF" />
+            </list>
+        </property>
+    </bean>
+    
+    <bean id="gbQB" class="com.mikedesmarais.fantasycalculator.Player">
+        <property name="name" value="Aaron Rodgers" />
+        <property name="position" value="QB" />
+        <property name="week1" value="18.3" />
+        <property name="week2" value="20.54" />
+        <property name="week3" value="0" />
+        <property name="week4" value="0" />
+        <property name="totalScore" value="38.84" />
+    </bean>
+    
+<!--     <bean id="gbRB" class="com.mikedesmarais.fantasycalculator.Player"> -->
+<!--         <property name="name" value="James Starks" /> -->
+<!--         <property name="position" value="RB" /> -->
+<!--         <property name="week1" value="12.5" /> -->
+<!--         <property name="week2" value="0" /> -->
+<!--         <property name="week3" value="0" /> -->
+<!--         <property name="week4" value="0" /> -->
+<!--         <property name="totalScore" value="12.5" /> -->
+<!--     </bean> -->
+
+    <bean id="gbRB" class="com.mikedesmarais.fantasycalculator.Player">
+        <property name="name" value="Eddie Lacy" />
+        <property name="position" value="RB" />
+        <property name="week1" value="10.3" />
+        <property name="week2" value="9.1" />
+        <property name="week3" value="0" />
+        <property name="week4" value="0" />
+        <property name="totalScore" value="19.4" />
+    </bean>
+    
+<!--     <bean id="gbWR" class="com.mikedesmarais.fantasycalculator.Player"> -->
+<!--         <property name="name" value="Davante Adams" /> -->
+<!--         <property name="position" value="WR" /> -->
+<!--         <property name="week1" value="10.8" /> -->
+<!--         <property name="week2" value="0" /> -->
+<!--         <property name="week3" value="0" /> -->
+<!--         <property name="week4" value="0" /> -->
+<!--         <property name="totalScore" value="10.8" /> -->
+<!--     </bean> -->
+
+    <bean id="gbWR" class="com.mikedesmarais.fantasycalculator.Player">
+        <property name="name" value="Jeff Janis" />
+        <property name="position" value="WR" />
+        <property name="week1" value="0" />
+        <property name="week2" value="26.5" />
+        <property name="week3" value="0" />
+        <property name="week4" value="0" />
+        <property name="totalScore" value="26.5" />
+    </bean>
+    
+    <bean id="gbTE" class="com.mikedesmarais.fantasycalculator.Player">
+        <property name="name" value="Richard Rodgers" />
+        <property name="position" value="TE" />
+        <property name="week1" value="1.1" />
+        <property name="week2" value="4.5" />
+        <property name="week3" value="0" />
+        <property name="week4" value="0" />
+        <property name="totalScore" value="5.6" />
+    </bean>
+    
+    <bean id="gbK" class="com.mikedesmarais.fantasycalculator.Player">
+        <property name="name" value="Mason Crosby" />
+        <property name="position" value="K" />
+        <property name="week1" value="10" />
+        <property name="week2" value="8" />
+        <property name="week3" value="0" />
+        <property name="week4" value="0" />
+        <property name="totalScore" value="18" />
+    </bean>
+    
+    <bean id="gbDEF" class="com.mikedesmarais.fantasycalculator.Player">
+        <property name="name" value="GB" />
+        <property name="position" value="DEF" />
+        <property name="week1" value="10" />
+        <property name="week2" value="6" />
+        <property name="week3" value="0" />
+        <property name="week4" value="0" />
+        <property name="totalScore" value="16" />
+    </bean>
+    
+    <bean id="was" class="com.mikedesmarais.fantasycalculator.Team">
+        <property name="name" value="Washington" />
+        <property name="players">
+            <list>
+                <ref bean="wasQB" />
+                <ref bean="wasRB" />
+                <ref bean="wasWR" />
+                <ref bean="wasTE" />
+                <ref bean="wasK" />
+                <ref bean="wasDEF" />
+            </list>
+        </property>
+    </bean>
+    
+    <bean id="wasQB" class="com.mikedesmarais.fantasycalculator.Player">
+        <property name="name" value="Kirk Cousins" />
+        <property name="position" value="QB" />
+        <property name="week1" value="21.36" />
+        <property name="week2" value="0" />
+        <property name="week3" value="0" />
+        <property name="week4" value="0" />
+        <property name="totalScore" value="21.36" />
+    </bean>
+    
+    <bean id="wasRB" class="com.mikedesmarais.fantasycalculator.Player">
+        <property name="name" value="Chris Thompson" />
+        <property name="position" value="RB" />
+        <property name="week1" value="11.4" />
+        <property name="week2" value="0" />
+        <property name="week3" value="0" />
+        <property name="week4" value="0" />
+        <property name="totalScore" value="11.4" />
+    </bean>
+    
+    <bean id="wasWR" class="com.mikedesmarais.fantasycalculator.Player">
+        <property name="name" value="Pierre Garcon" />
+        <property name="position" value="WR" />
+        <property name="week1" value="7" />
+        <property name="week2" value="0" />
+        <property name="week3" value="0" />
+        <property name="week4" value="0" />
+        <property name="totalScore" value="7" />
+    </bean>
+    
+    <bean id="wasTE" class="com.mikedesmarais.fantasycalculator.Player">
+        <property name="name" value="Jordan Reed" />
+        <property name="position" value="TE" />
+        <property name="week1" value="18" />
+        <property name="week2" value="0" />
+        <property name="week3" value="0" />
+        <property name="week4" value="0" />
+        <property name="totalScore" value="18" />
+    </bean>
+    
+    <bean id="wasK" class="com.mikedesmarais.fantasycalculator.Player">
+        <property name="name" value="Dustin Hopkins" />
+        <property name="position" value="K" />
+        <property name="week1" value="4" />
+        <property name="week2" value="0" />
+        <property name="week3" value="0" />
+        <property name="week4" value="0" />
+        <property name="totalScore" value="4" />
+    </bean>
+    
+    <bean id="wasDEF" class="com.mikedesmarais.fantasycalculator.Player">
+        <property name="name" value="WAS" />
+        <property name="position" value="DEF" />
+        <property name="week1" value="-4" />
+        <property name="week2" value="0" />
+        <property name="week3" value="0" />
+        <property name="week4" value="0" />
+        <property name="totalScore" value="-4" />
+    </bean>
+    
+    <bean id="car" class="com.mikedesmarais.fantasycalculator.Team">
+        <property name="name" value="Carolina" />
+        <property name="players">
+            <list>
+                <ref bean="carQB" />
+                <ref bean="carRB" />
+                <ref bean="carWR" />
+                <ref bean="carTE" />
+                <ref bean="carK" />
+                <ref bean="carDEF" />
+            </list>
+        </property>
+    </bean>
+    
+    <bean id="carQB" class="com.mikedesmarais.fantasycalculator.Player">
+        <property name="name" value="Cam Newton" />
+        <property name="position" value="QB" />
+        <property name="week1" value="0" />
+        <property name="week2" value="10.74" />
+        <property name="week3" value="40.1" />
+        <property name="week4" value="0" />
+        <property name="totalScore" value="50.84" />
+    </bean>
+    
+    <bean id="carRB" class="com.mikedesmarais.fantasycalculator.Player">
+        <property name="name" value="Jonathan Stewart" />
+        <property name="position" value="RB" />
+        <property name="week1" value="0" />
+        <property name="week2" value="23.1" />
+        <property name="week3" value="8.8" />
+        <property name="week4" value="0" />
+        <property name="totalScore" value="31.9" />
+    </bean>
+    
+    <bean id="carWR" class="com.mikedesmarais.fantasycalculator.Player">
+        <property name="name" value="Corey Brown" />
+        <property name="position" value="WR" />
+        <property name="week1" value="0" />
+        <property name="week2" value="2.2" />
+        <property name="week3" value="17.3" />
+        <property name="week4" value="0" />
+        <property name="totalScore" value="19.5" />
+    </bean>
+    
+    <bean id="carTE" class="com.mikedesmarais.fantasycalculator.Player">
+        <property name="name" value="Greg Olsen" />
+        <property name="position" value="TE" />
+        <property name="week1" value="0" />
+        <property name="week2" value="13.7" />
+        <property name="week3" value="11.3" />
+        <property name="week4" value="0" />
+        <property name="totalScore" value="25" />
+    </bean>
+    
+    <bean id="carK" class="com.mikedesmarais.fantasycalculator.Player">
+        <property name="name" value="car Kicker" />
+        <property name="position" value="K" />
+        <property name="week1" value="0" />
+        <property name="week2" value="0" />
+        <property name="week3" value="0" />
+        <property name="week4" value="0" />
+        <property name="totalScore" value="0" />
+    </bean>
+    
+    <bean id="carDEF" class="com.mikedesmarais.fantasycalculator.Player">
+        <property name="name" value="CAR" />
+        <property name="position" value="DEF" />
+        <property name="week1" value="14" />
+        <property name="week2" value="24" />
+        <property name="week3" value="0" />
+        <property name="week4" value="0" />
+        <property name="totalScore" value="38" />
+    </bean>
+    
+        <bean id="min" class="com.mikedesmarais.fantasycalculator.Team">
+        <property name="name" value="Minnesota" />
+        <property name="players">
+            <list>
+                <ref bean="minQB" />
+                <ref bean="minRB" />
+                <ref bean="minWR" />
+                <ref bean="minTE" />
+                <ref bean="minK" />
+                <ref bean="minDEF" />
+            </list>
+        </property>
+    </bean>
+    
+    <bean id="minQB" class="com.mikedesmarais.fantasycalculator.Player">
+        <property name="name" value="Teddy Bridgewater" />
+        <property name="position" value="QB" />
+        <property name="week1" value="5.84" />
+        <property name="week2" value="0" />
+        <property name="week3" value="0" />
+        <property name="week4" value="0" />
+        <property name="totalScore" value="5.84" />
+    </bean>
+    
+    <bean id="minRB" class="com.mikedesmarais.fantasycalculator.Player">
+        <property name="name" value="Adrian Peterson" />
+        <property name="position" value="RB" />
+        <property name="week1" value="3.8" />
+        <property name="week2" value="0" />
+        <property name="week3" value="0" />
+        <property name="week4" value="0" />
+        <property name="totalScore" value="3.8" />
+    </bean>
+    
+    <bean id="minWR" class="com.mikedesmarais.fantasycalculator.Player">
+        <property name="name" value="Stefon Diggs" />
+        <property name="position" value="WR" />
+        <property name="week1" value="3.2" />
+        <property name="week2" value="0" />
+        <property name="week3" value="0" />
+        <property name="week4" value="0" />
+        <property name="totalScore" value="3.2" />
+    </bean>
+    
+    <bean id="minTE" class="com.mikedesmarais.fantasycalculator.Player">
+        <property name="name" value="Kyle Rudolph" />
+        <property name="position" value="TE" />
+        <property name="week1" value="2.4" />
+        <property name="week2" value="0" />
+        <property name="week3" value="0" />
+        <property name="week4" value="0" />
+        <property name="totalScore" value="2.4" />
+    </bean>
+    
+    <bean id="minK" class="com.mikedesmarais.fantasycalculator.Player">
+        <property name="name" value="Blair Walsh" />
+        <property name="position" value="K" />
+        <property name="week1" value="9" />
+        <property name="week2" value="0" />
+        <property name="week3" value="0" />
+        <property name="week4" value="0" />
+        <property name="totalScore" value="9" />
+    </bean>
+    
+    <bean id="minDEF" class="com.mikedesmarais.fantasycalculator.Player">
+        <property name="name" value="MIN" />
+        <property name="position" value="DEF" />
+        <property name="week1" value="8" />
+        <property name="week2" value="0" />
+        <property name="week3" value="0" />
+        <property name="week4" value="0" />
+        <property name="totalScore" value="8" />
+    </bean>
+    
+    <bean id="ari" class="com.mikedesmarais.fantasycalculator.Team">
+        <property name="name" value="Arizona" />
+        <property name="players">
+            <list>
+                <ref bean="ariQB" />
+                <ref bean="ariRB" />
+                <ref bean="ariWR" />
+                <ref bean="ariTE" />
+                <ref bean="ariK" />
+                <ref bean="ariDEF" />
+            </list>
+        </property>
+    </bean>
+    
+    <bean id="ariQB" class="com.mikedesmarais.fantasycalculator.Player">
+        <property name="name" value="Carson Palmer" />
+        <property name="position" value="QB" />
+        <property name="week1" value="0" />
+        <property name="week2" value="21.96" />
+        <property name="week3" value="1.4" />
+        <property name="week4" value="0" />
+        <property name="totalScore" value="23.36" />
+    </bean>
+    
+    <bean id="ariRB" class="com.mikedesmarais.fantasycalculator.Player">
+        <property name="name" value="David Johnson" />
+        <property name="position" value="RB" />
+        <property name="week1" value="0" />
+        <property name="week2" value="3.5" />
+        <property name="week3" value="18.8" />
+        <property name="week4" value="0" />
+        <property name="totalScore" value="22.3" />
+    </bean>
+    
+    <bean id="ariWR" class="com.mikedesmarais.fantasycalculator.Player">
+        <property name="name" value="Larry Fitzgerald" />
+        <property name="position" value="WR" />
+        <property name="week1" value="0" />
+        <property name="week2" value="23.6" />
+        <property name="week3" value="3" />
+        <property name="week4" value="0" />
+        <property name="totalScore" value="26.6" />
+    </bean>
+    
+    <bean id="ariTE" class="com.mikedesmarais.fantasycalculator.Player">
+        <property name="name" value="Darren Fells" />
+        <property name="position" value="TE" />
+        <property name="week1" value="0" />
+        <property name="week2" value="1.4" />
+        <property name="week3" value="9.6" />
+        <property name="week4" value="0" />
+        <property name="totalScore" value="11" />
+    </bean>
+    
+    <bean id="ariK" class="com.mikedesmarais.fantasycalculator.Player">
+        <property name="name" value="Chandler Catanzano" />
+        <property name="position" value="K" />
+        <property name="week1" value="0" />
+        <property name="week2" value="8" />
+        <property name="week3" value="1" />
+        <property name="week4" value="0" />
+        <property name="totalScore" value="9" />
+    </bean>
+    
+    <bean id="ariDEF" class="com.mikedesmarais.fantasycalculator.Player">
+        <property name="name" value="ARI" />
+        <property name="position" value="DEF" />
+        <property name="week1" value="0" />
+        <property name="week2" value="3" />
+        <property name="week3" value="-7" />
+        <property name="week4" value="0" />
+        <property name="totalScore" value="-4" />
+    </bean>
+</beans>
